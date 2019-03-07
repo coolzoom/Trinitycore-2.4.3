@@ -166,7 +166,7 @@ struct boss_kalecgos : public BossAI
             return;
 
         _EnterEvadeMode();
-        instance->SendEncounterUnit(ENCOUNTER_FRAME_DISENGAGE, me);
+        //instance->SendEncounterUnit(ENCOUNTER_FRAME_DISENGAGE, me);
         instance->DoRemoveAurasDueToSpellOnPlayers(SPELL_SPECTRAL_REALM_AURA);
         summons.DespawnAll();
         DespawnPortals();
@@ -210,7 +210,7 @@ struct boss_kalecgos : public BossAI
 
     void JustEngagedWith(Unit* /*who*/) override
     {
-        instance->SendEncounterUnit(ENCOUNTER_FRAME_ENGAGE, me);
+        //instance->SendEncounterUnit(ENCOUNTER_FRAME_ENGAGE, me);
         Talk(SAY_EVIL_AGGRO);
         _JustEngagedWith();
 
@@ -318,7 +318,7 @@ struct boss_kalecgos : public BossAI
                     me->AttackStop();
                     me->SetFaction(FACTION_FRIENDLY);
                     me->RemoveAllAuras();
-                    instance->SendEncounterUnit(ENCOUNTER_FRAME_DISENGAGE, me);
+                    //instance->SendEncounterUnit(ENCOUNTER_FRAME_DISENGAGE, me);
                     events.ScheduleEvent(EVENT_OUTRO_1, Seconds(3));
                     break;
                 case EVENT_OUTRO_1:
